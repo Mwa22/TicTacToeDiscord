@@ -1,7 +1,7 @@
-Tic Tac Toe Discord    [![Current Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/Mwa22/TicTacToeDiscord)
+Tic Tac Toe Discord    [![Current Version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://github.com/Mwa22/TicTacToeDiscord)
 ================
 
-This is a Tic Tac Toe game in discord !
+This is a Tic Tac Toe game on discord !
 
 ## Installation
 > This application requires [nodejs](https://nodejs.org) and [npm](https://www.npmjs.com/get-npm) to be installed.

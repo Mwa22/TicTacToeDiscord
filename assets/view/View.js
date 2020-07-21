@@ -227,7 +227,7 @@ class View {
 		.setColor("e67e22")
 		.setAuthor(bot.username, bot.displayAvatarURL())
 		.setTitle("💡 🇭🇪🇱🇵")
-		.setDescription("A tic tac toe game in discord !");
+		.setDescription("A tic tac toe game on discord !");
 
 		embed.addField("❗ Commands", 
 			`**${config.get("prefix")}tictactoe**, **${config.get("prefix")}ttt**, **${config.get("prefix")}oxo** - to start a game against _a bot_.
