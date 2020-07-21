@@ -4,7 +4,7 @@ Tic Tac Toe Discord    [![Current Version](https://img.shields.io/badge/version-
 This is a Tic Tac Toe game in discord !
 
 ## Installation
-> This application requires [nodejs](https://nodejs.org) and [npm][https://www.npmjs.com/get-npm] to be installed.
+> This application requires [nodejs](https://nodejs.org) and [npm](https://www.npmjs.com/get-npm) to be installed.
 
 - Use `npm i` to install all the dependencies.
 - Write your `bot token` in config/production.json.
