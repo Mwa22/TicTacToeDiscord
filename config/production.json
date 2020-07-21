@@ -1,4 +1,7 @@
 {
 	"token": "TOKEN HERE",
-	"prefix": "!"
+	"prefix": "!",
+	"easyBot": "🤪",
+	"randomBot": "🎲",
+	"cheatBot": "👽"
 }

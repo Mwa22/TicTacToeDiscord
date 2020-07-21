@@ -4,7 +4,7 @@
   "description": "The tic tac toe game on discord.",
   "main": "main.js",
   "scripts": {
-	"start": "node main.js",
+    "start": "cross-env NODE_ENV=production node main.js",
     "dev": "nodemon main.js"
   },
   "repository": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Mwa22/TicTacToeDiscord/issues"
   },
-  "homepage": "https://github.com/Mwa22/TicTacToeDiscord#readme"
+  "homepage": "https://github.com/Mwa22/TicTacToeDiscord#readme",
+  "dependencies": {
+    "config": "^3.3.1",
+    "cross-env": "^7.0.2",
+    "discord.js": "^12.2.0"
+  }
 }
