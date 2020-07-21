@@ -22,14 +22,11 @@ You can find all the commands by typing `!help, !h` in a server channel.
 
 <p align="center">
   <img src = "https://i.imgur.com/WpjqJbD.png" width="300">
-</p>
-
-<p align="center">
-  <img src = "https://i.imgur.com/s9rkcGU.png" width="300">
-</p>
-
-<p align="center">
   <img src = "https://i.imgur.com/Xczwsq7.png" width="300">
+</p>
+
+<p align="center">
+  <img src = "https://i.imgur.com/s9rkcGU.png" width="500">
 </p>
 
 ## Author
