@@ -1,4 +1,4 @@
-Tic Tac Toe Discord    [![Current Version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://github.com/Mwa22/TicTacToeDiscord)
+Tic Tac Toe Discord    [![Current Version](https://img.shields.io/badge/version-1.0.2-green.svg)](https://github.com/Mwa22/TicTacToeDiscord)
 ================
 
 This is a Tic Tac Toe game on discord !
@@ -15,7 +15,7 @@ This is a Tic Tac Toe game on discord !
 You can find all the commands by typing `!help, !h` in a server channel.
 
 <p align="center">
-  <img src = "https://i.imgur.com/IjVFlOG.png" width="500">
+  <img src = "https://i.imgur.com/vRaiC96.png" width="500">
 </p>
 
 ## Screens
@@ -26,7 +26,7 @@ You can find all the commands by typing `!help, !h` in a server channel.
 </p>
 
 <p align="center">
-  <img src = "https://i.imgur.com/s9rkcGU.png" width="500">
+  <img src = "https://i.imgur.com/7mbosDW.png" width="500">
 </p>
 
 ## Author

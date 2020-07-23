@@ -154,17 +154,17 @@ class View {
 		.setThumbnail((player.type === PlayerType.HUMAN)? player.member.user.displayAvatarURL() : "https://scx1.b-cdn.net/csz/news/800/2019/3-robot.jpg");
 
 		let boardMsg = "";
-		for (let y=0; y<3; y++) {
-			for (let x=0; x<3; x++) {
+		for (let y=0; y < board.size; y++) {
+			for (let x=0; x < board.size; x++) {
 				const type = board.getSquare(x, y).type;
-				boardMsg += (type === SquareType.O)? 'O' : (type === SquareType.X)? 'X' : (y*3+x)+1;
-				if (x !== 2)
-				boardMsg += " | ";
+				boardMsg += (type === SquareType.O)? ' ‎⭕ ‎' : (type === SquareType.X)? ' ‎❌ ‎' : ` ‎ ‎ ‎${(y*board.size+x)+1} ‎ ‎ ‎`;
+				if (x !== board.size-1)
+					boardMsg += "|";
 			}
 
 			boardMsg += "\n";
-			if (y !== 2)
-			boardMsg += "---------\n"
+			if (y !== board.size-1)
+				boardMsg += "----------------\n";
 		}
 
 		embed.setDescription(boardMsg);
@@ -181,7 +181,7 @@ class View {
 	showWinner(channel, winner) {
 		let embed = new MessageEmbed()
 		.setColor("2ecc71")
-		.setTitle((winner === null)? "🤜🤛 There is equality !" : (winner.type !== PlayerType.HUMAN)? `👑 The bot wins !` : `👑 The winner is ${winner.member.displayName} !`);
+		.setTitle((winner === null)? "🤜🤛 It's a draw !" : (winner.type !== PlayerType.HUMAN)? `👑 The bot wins !` : `👑 The winner is ${winner.member.displayName} !`);
 
 		channel.send(embed);
 	}

@@ -134,6 +134,9 @@ class Controller {
 			const collector = message2.createReactionCollector(filter, {time: 60000});
 
 			collector.on("collect", r => {
+				// Remove the reaction.
+				r.users.remove(room.currentPlayer.member);
+
 				room.play(parseInt(Object.keys(numsFree).find(num => numsFree[num] === r.emoji.name)))
 				.then(() => {
 					if (room.isOver()) {

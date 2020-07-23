@@ -77,7 +77,7 @@ module.exports = class Room {
 			throw new Error("The given position is not free.");
 
 		return new Promise((resolve, reject) => {
-			this._board.setSquare(Math.floor(pos%3), Math.floor(pos/3), (this._currentPlayer === 0)? SquareType.X : SquareType.O);
+			this._board.setSquare(pos%this._board.size, Math.floor(pos/this._board.size), this.currentPlayer.squareType);
 
 			if (!this.isOver()) {
 				this.swapPlayer();
@@ -128,7 +128,7 @@ module.exports = class Room {
 			for (let pos of board.getFree()) {
 				// Copy the board.
 				let copy = board.copy();
-				copy.setSquare(Math.floor(pos%3), Math.floor(pos/3), this.currentPlayer.squareType);
+				copy.setSquare(pos%this._board.size, Math.floor(pos/this._board.size), this.currentPlayer.squareType);
 
 				let currentEval = this._minimax(copy, depth+1, alpha, beta, false);
 
@@ -151,7 +151,7 @@ module.exports = class Room {
 			for (let pos of board.getFree()) {
 				// Copy the board.
 				let copy = board.copy();
-				copy.setSquare(Math.floor(pos%3), Math.floor(pos/3), this.opponentPlayer.squareType);
+				copy.setSquare(pos%3, Math.floor(pos/this._board.size), this.opponentPlayer.squareType);
 
 				let currentEval = this._minimax(copy, depth+1, alpha, beta, true);
 				minEval = Math.min(currentEval, minEval);
@@ -202,28 +202,26 @@ module.exports = class Room {
 	_getSquareTypeWinner(board) {
 		if (board === undefined)
 			board = this._board;
-
-		let type = null;
 		
 		const squares = board._squares;
 
-		for (let i=0; i < 3; i++) {
+		for (let i=0; i < board.size; i++) {
 			// Horizontal.
 			if (!squares[i][0].isEmpty() && squares[i][0].type === squares[i][1].type && squares[i][0].type === squares[i][2].type)
-				type = squares[i][0].type;
+				return squares[i][0].type;
 			// Vertical.
 			if (!squares[0][i].isEmpty() && squares[0][i].type === squares[1][i].type && squares[0][i].type === squares[2][i].type)
-				type = squares[0][i].type;
+				return squares[0][i].type;
 		}
 
 		// Diagonal.
 		if (!squares[0][0].isEmpty() && squares[0][0].type === squares[1][1].type && squares[0][0].type === squares[2][2].type)
-			type = squares[0][0].type;
+			return squares[0][0].type;
 		// Anti-Diagonal.
 		if (!squares[0][2].isEmpty() && squares[0][2].type === squares[1][1].type && squares[0][2].type === squares[2][0].type)
-			type = squares[0][2].type;
+			return squares[0][2].type;
 
-		return type;
+		return null;
 	}
 
 	/**
@@ -237,6 +235,6 @@ module.exports = class Room {
 
 		const typeWinner = this._getSquareTypeWinner();
 		if (typeWinner === null) return null;
-		return (this._players[0].type === typeWinner)? this._players[0] : this._players[1];
+		return (this._players[0].squareType === typeWinner)? this._players[0] : this._players[1];
 	}
 }
